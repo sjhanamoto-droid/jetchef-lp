@@ -1,0 +1,70 @@
+.contact {
+  padding-block: var(--section-y);
+  background:
+    radial-gradient(70% 80% at 0% 0%, rgba(183, 39, 25, 0.22), transparent 55%),
+    radial-gradient(70% 80% at 100% 100%, rgba(190, 140, 78, 0.18), transparent 55%),
+    var(--c-ink);
+  color: #fff;
+}
+.contact__inner { text-align: center; max-width: 760px; }
+.contact__kicker { color: var(--c-gold-2); justify-content: center; }
+.contact__kicker::before { background: var(--c-gold-2); }
+.contact__title {
+  margin-top: var(--sp-3);
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  line-height: 1.4;
+  color: #fff;
+}
+.contact__lead {
+  margin-top: var(--sp-5);
+  font-family: var(--f-serif);
+  font-size: var(--t-body);
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contact__actions {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+.contact__actions .btn--primary { font-size: 1.05rem; padding: 1em 2.2em; }
+.contact__btn {
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  padding: 1em 2em;
+  border-radius: var(--r-pill);
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.5);
+  transition: background var(--dur-2), transform var(--dur-1);
+}
+.contact__btn:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
+
+.contact__direct {
+  margin-top: clamp(2rem, 5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.contact__phone {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact__phone-label { font-family: var(--f-sans); font-size: var(--t-sm); color: rgba(255, 255, 255, 0.7); }
+.contact__phone-num {
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--c-gold-2);
+  letter-spacing: 0.02em;
+}
+.contact__hours { font-family: var(--f-sans); font-size: var(--t-xs); color: rgba(255, 255, 255, 0.55); }

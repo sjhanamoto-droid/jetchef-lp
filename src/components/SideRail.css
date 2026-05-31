@@ -1,0 +1,74 @@
+/* ---- Desktop vertical rail ---- */
+.side-rail {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: var(--z-rail);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.side-rail__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 56px;
+  padding: 1.1rem 0.5rem;
+  color: #fff;
+  border-radius: var(--r) 0 0 var(--r);
+  box-shadow: -6px 6px 20px rgba(20, 10, 4, 0.22);
+  transition: width var(--dur-2) var(--ease), filter var(--dur-1), transform var(--dur-2) var(--ease);
+}
+.side-rail__btn:first-child { border-top-right-radius: 0; }
+.side-rail__btn--order { background: var(--c-red); }
+.side-rail__btn--contact { background: var(--c-ink); }
+.side-rail__btn:hover { transform: translateX(-6px); filter: brightness(1.08); }
+.side-rail__text {
+  writing-mode: vertical-rl;
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.14em;
+}
+
+/* ---- Mobile bottom bar ---- */
+.mobile-bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-rail);
+  padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+  gap: 0.6rem;
+  background: rgba(255, 253, 248, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--c-line);
+  box-shadow: 0 -8px 24px rgba(40, 20, 8, 0.1);
+}
+.mobile-bar__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 0.85rem;
+  border-radius: var(--r-pill);
+  color: #fff;
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+.mobile-bar__btn--order { background: var(--c-red); }
+.mobile-bar__btn--contact { background: var(--c-ink); }
+.mobile-bar__btn:active { transform: scale(0.97); }
+
+@media (max-width: 768px) {
+  .side-rail { display: none; }
+  .mobile-bar { display: flex; }
+  /* keep the fixed action bar from covering the last of the page */
+  body { padding-bottom: calc(var(--mobile-bar-h) + env(safe-area-inset-bottom)); }
+}

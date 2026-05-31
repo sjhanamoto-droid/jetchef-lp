@@ -1,0 +1,10 @@
+# Unused high-res source photos — not referenced by the app
+public/assets/images/
+
+# Agent orchestration state
+.omc/
+**/.omc/
+
+# Local build output (Vercel builds fresh)
+dist/
+node_modules/

@@ -1,0 +1,90 @@
+/* =====================================================================
+   JET CHEF — Design Tokens
+   Single source of truth for color, type, spacing, motion.
+   Edit values here to retheme the whole site.
+   ===================================================================== */
+:root {
+  /* ---- Brand palette ---- */
+  --c-ink: #1c1510;          /* near-black, warm */
+  --c-text: #2c2420;         /* body text */
+  --c-text-soft: #6f6157;    /* muted text */
+  --c-text-faint: #9b8e83;
+
+  --c-paper: #faf6ee;        /* page background (washi) */
+  --c-paper-2: #f4ecdf;      /* alt surface */
+  --c-cream: #fffdf8;        /* cards */
+
+  --c-brown: #581801;        /* deep brown (frames, titles) */
+  --c-red: #b72719;          /* primary accent / CTA */
+  --c-red-2: #cc3829;
+  --c-gold: #be8c4e;         /* gold accent */
+  --c-gold-2: #d8ac6c;
+  --c-on-gold: #3a2200;      /* text on gold surfaces */
+
+  --c-line: rgba(88, 24, 1, 0.14);
+  --c-line-strong: rgba(88, 24, 1, 0.28);
+  --c-overlay: rgba(20, 12, 6, 0.55);
+
+  --c-surface-dark: #211a14;   /* panel / dark surfaces */
+  --c-on-dark: #f3ebdf;        /* text on dark surfaces */
+
+  /* ---- Typography ---- */
+  --f-serif: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  --f-serif-b1: 'Shippori Mincho B1', 'Hiragino Mincho ProN', serif;
+  --f-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --f-deco: 'BIZ UDPMincho', 'Shippori Mincho B1', serif;
+
+  /* Fluid type scale (min .. max via clamp) */
+  --t-display: clamp(2.4rem, 5.2vw, 4rem);
+  --t-h1: clamp(2rem, 4.2vw, 3.1rem);
+  --t-h2: clamp(1.6rem, 3.2vw, 2.5rem);
+  --t-h3: clamp(1.25rem, 2.2vw, 1.65rem);
+  --t-lead: clamp(1.05rem, 1.6vw, 1.25rem);
+  --t-body: 1rem;
+  --t-sm: 0.875rem;
+  --t-xs: 0.78rem;
+
+  /* ---- Spacing ---- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --section-y: clamp(3.5rem, 8vw, 7rem);
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* ---- Radii ---- */
+  --r-sm: 8px;
+  --r: 14px;
+  --r-lg: 22px;
+  --r-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --sh-sm: 0 2px 8px rgba(60, 30, 10, 0.08);
+  --sh: 0 10px 30px rgba(60, 30, 10, 0.12);
+  --sh-lg: 0 24px 60px rgba(40, 20, 8, 0.22);
+  --sh-panel: -10px 0 60px rgba(20, 10, 4, 0.4);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 0.18s;
+  --dur-2: 0.32s;
+  --dur-3: 0.6s;
+
+  /* ---- Layout ---- */
+  --header-h: 76px;
+  --mobile-bar-h: 72px;
+  --z-header: 100;
+  --z-rail: 90;
+  --z-panel: 200;
+}
+
+@media (max-width: 768px) {
+  :root { --header-h: 62px; }
+}

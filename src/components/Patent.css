@@ -1,0 +1,48 @@
+.patent { background: var(--c-paper); }
+.patent__inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.patent__badge { text-align: center; }
+.patent__badge img {
+  width: clamp(200px, 26vw, 300px);
+  margin-inline: auto;
+  filter: drop-shadow(0 12px 24px rgba(60, 30, 10, 0.2));
+}
+.patent__body .section-title { margin-top: var(--sp-3); }
+.patent__lead {
+  margin-top: var(--sp-4);
+  font-family: var(--f-serif);
+  font-size: var(--t-body);
+  line-height: 2;
+  color: var(--c-text-soft);
+}
+.patent__nums {
+  margin-top: var(--sp-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+.patent__num {
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: var(--sh-sm);
+}
+.patent__num dt { font-family: var(--f-sans); font-size: var(--t-xs); color: var(--c-text-faint); letter-spacing: 0.1em; }
+.patent__num dd {
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--c-brown);
+  margin-top: 0.2em;
+}
+.patent__note { margin-top: var(--sp-4); font-family: var(--f-sans); font-size: var(--t-xs); color: var(--c-text-faint); }
+
+@media (max-width: 760px) {
+  .patent__inner { grid-template-columns: 1fr; text-align: center; }
+  .patent__nums { justify-content: center; }
+}

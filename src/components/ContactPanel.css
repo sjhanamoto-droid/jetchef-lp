@@ -1,0 +1,47 @@
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 1.25rem;
+  border-radius: var(--r);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background var(--dur-2), border-color var(--dur-2), transform var(--dur-1);
+}
+.contact-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.contact-card__icon {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-sm);
+  color: #fff;
+}
+.contact-card__icon--red { background: linear-gradient(135deg, var(--c-red), #8f1d12); }
+.contact-card__icon--line { background: linear-gradient(135deg, #06c755, #04a045); }
+.contact-card__icon--gold { background: linear-gradient(135deg, var(--c-gold), #9c6e30); }
+
+.contact-card__body { display: flex; flex-direction: column; gap: 0.2em; flex: 1; min-width: 0; }
+.contact-card__label { font-family: var(--f-sans); font-weight: 600; font-size: var(--t-xs); color: rgba(245, 237, 224, 0.65); }
+.contact-card__value { font-family: var(--f-serif-b1); font-weight: 800; font-size: 1.3rem; line-height: 1.2; letter-spacing: 0.01em; }
+.contact-card__meta { font-family: var(--f-sans); font-size: var(--t-xs); color: rgba(245, 237, 224, 0.55); margin-top: 0.15em; }
+
+.contact-card__arrow {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  color: rgba(245, 237, 224, 0.55);
+  transition: transform var(--dur-1), color var(--dur-1);
+}
+.contact-card:hover .contact-card__arrow { transform: translateX(4px); color: #fff; }

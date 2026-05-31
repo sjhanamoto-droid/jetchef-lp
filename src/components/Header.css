@@ -1,0 +1,145 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  height: var(--header-h);
+  transition: background var(--dur-2), box-shadow var(--dur-2), backdrop-filter var(--dur-2);
+}
+.site-header.is-solid {
+  background: rgba(255, 253, 248, 0.85);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  backdrop-filter: saturate(1.4) blur(12px);
+  box-shadow: 0 2px 20px rgba(40, 20, 8, 0.08);
+}
+
+.site-header__inner {
+  height: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.site-header__logo { flex-shrink: 0; }
+.site-header__logo img {
+  height: 30px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  transition: filter var(--dur-2);
+}
+.site-header.is-solid .site-header__logo img { filter: none; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 2rem);
+  margin-left: auto;
+}
+.site-nav__link {
+  font-family: var(--f-serif-b1);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+  padding: 0.3em 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: color var(--dur-2), opacity var(--dur-1);
+}
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--c-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-2) var(--ease);
+}
+.site-nav__link:hover::after { transform: scaleX(1); }
+.site-header.is-solid .site-nav__link { color: var(--c-ink); text-shadow: none; }
+
+.site-header__cta {
+  flex-shrink: 0;
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #fff;
+  background: var(--c-red);
+  padding: 0.6em 1.4em;
+  border-radius: var(--r-pill);
+  box-shadow: 0 6px 18px rgba(183, 39, 25, 0.34);
+  transition: transform var(--dur-1), background var(--dur-2);
+}
+.site-header__cta:hover { transform: translateY(-2px); background: var(--c-red-2); }
+
+/* Burger */
+.site-header__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  margin-left: auto;
+}
+.site-header__burger span {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform var(--dur-2), opacity var(--dur-1), background var(--dur-2);
+}
+.site-header.is-solid .site-header__burger span { background: var(--c-ink); }
+.site-header__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-header__burger.is-open span:nth-child(2) { opacity: 0; }
+.site-header__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.site-header__burger.is-open span { background: #fff; }
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  background: rgba(28, 21, 16, 0.97);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity var(--dur-2), transform var(--dur-2), visibility var(--dur-2);
+}
+.mobile-menu.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+.mobile-menu__link {
+  font-family: var(--f-serif-b1);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.mobile-menu__cta {
+  margin-top: var(--sp-3);
+  font-family: var(--f-serif-b1);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--c-red);
+  padding: 0.8em 2.4em;
+  border-radius: var(--r-pill);
+}
+
+@media (max-width: 1080px) {
+  .site-nav, .site-header__cta { display: none; }
+  .site-header__burger { display: flex; }
+  .site-header { background: rgba(255, 253, 248, 0.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .site-header:not(.is-solid) { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
