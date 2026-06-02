@@ -1,3 +1,43 @@
+.order-phone {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 1.15rem 1.25rem;
+  margin-bottom: var(--sp-5);
+  border-radius: var(--r);
+  background: linear-gradient(135deg, rgba(183, 39, 25, 0.22), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(183, 39, 25, 0.5);
+  transition: background var(--dur-2), border-color var(--dur-2), transform var(--dur-1);
+}
+.order-phone:hover {
+  background: var(--c-red);
+  border-color: var(--c-red);
+  transform: translateY(-2px);
+}
+.order-phone__icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-sm);
+  background: linear-gradient(135deg, var(--c-red), #8f1d12);
+  color: #fff;
+  transition: background var(--dur-2);
+}
+.order-phone:hover .order-phone__icon { background: rgba(255, 255, 255, 0.16); }
+.order-phone__body { display: flex; flex-direction: column; gap: 0.15em; flex: 1; min-width: 0; }
+.order-phone__label { font-family: var(--f-sans); font-weight: 600; font-size: var(--t-xs); color: rgba(245, 237, 224, 0.75); }
+.order-phone__value { font-family: var(--f-serif-b1); font-weight: 800; font-size: 1.45rem; line-height: 1.15; letter-spacing: 0.01em; color: #fff; }
+.order-phone__meta { font-family: var(--f-sans); font-size: var(--t-xs); color: rgba(245, 237, 224, 0.6); margin-top: 0.1em; }
+.order-phone__arrow {
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  color: rgba(245, 237, 224, 0.7);
+  transition: transform var(--dur-1), color var(--dur-1);
+}
+.order-phone:hover .order-phone__arrow { transform: translateX(4px); color: #fff; }
+
 .order-links {
   display: flex;
   flex-direction: column;
