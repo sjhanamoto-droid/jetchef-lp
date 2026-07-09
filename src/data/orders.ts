@@ -17,7 +17,7 @@ export const PERSONAL_ORDERS: PersonalOrder[] = [
   },
   {
     label: 'オンライン通販でお取り寄せ',
-    sub: '冷凍便を美味しさそのままチルド便で全国へお届け',
+    sub: '美味しさそのままチルド便で全国へお届け',
     url: 'https://nisshintasuke-tsuhan.take-eats.jp/',
   },
 ]
