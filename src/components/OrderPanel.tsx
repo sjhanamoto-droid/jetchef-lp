@@ -4,6 +4,7 @@ import PanelShell from './PanelShell'
 import { IMG } from '../data/images'
 import { CONTACT } from '../data/contact'
 import { PERSONAL_ORDERS, CORPORATE_ORDERS, CORPORATE_NOTE } from '../data/orders'
+import type { PersonalOrder } from '../data/orders'
 import './OrderPanel.css'
 
 const rowIn = (i: number) => ({
@@ -11,6 +12,22 @@ const rowIn = (i: number) => ({
   animate: { opacity: 1, y: 0 },
   transition: { delay: 0.12 + i * 0.05, duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
 })
+
+const OrderLink = ({ order, index }: { order: PersonalOrder; index: number }) => (
+  <motion.a
+    className="order-link"
+    href={order.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    {...rowIn(index)}
+  >
+    <span className="order-link__text">
+      <span className="order-link__label">{order.label}</span>
+      <span className="order-link__sub">{order.sub}</span>
+    </span>
+    <span className="order-link__arrow" aria-hidden="true">→</span>
+  </motion.a>
+)
 
 const PhoneIcon = () => (
   <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none">
@@ -20,6 +37,9 @@ const PhoneIcon = () => (
 
 export default function OrderPanel() {
   const { panel, close } = useUI()
+
+  const onlineOrder = PERSONAL_ORDERS.find((o) => o.label.includes('通販'))
+  const localOrders = PERSONAL_ORDERS.filter((o) => o !== onlineOrder)
 
   return (
     <PanelShell
@@ -38,6 +58,26 @@ export default function OrderPanel() {
         </span>
         <span className="order-phone__arrow" aria-hidden="true">→</span>
       </motion.a>
+
+      {/* オンライン通販でお取り寄せ（3大カテゴリーの1つとして強調） */}
+      {onlineOrder && (
+        <section className="panel-section">
+          <motion.a
+            className="order-featured"
+            href={onlineOrder.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            {...rowIn(0)}
+          >
+            <span className="order-featured__text">
+              <span className="order-featured__badge">全国配送</span>
+              <span className="order-featured__label">{onlineOrder.label}</span>
+              <span className="order-featured__sub">{onlineOrder.sub}</span>
+            </span>
+            <span className="order-featured__arrow" aria-hidden="true">→</span>
+          </motion.a>
+        </section>
+      )}
 
       {/* 法人のお客様 */}
       <section className="panel-section">
@@ -67,21 +107,8 @@ export default function OrderPanel() {
       <section className="panel-section">
         <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様予約はこちら" />
         <div className="order-links">
-          {PERSONAL_ORDERS.map((o, i) => (
-            <motion.a
-              key={o.url}
-              className="order-link"
-              href={o.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              {...rowIn(i)}
-            >
-              <span className="order-link__text">
-                <span className="order-link__label">{o.label}</span>
-                <span className="order-link__sub">{o.sub}</span>
-              </span>
-              <span className="order-link__arrow" aria-hidden="true">→</span>
-            </motion.a>
+          {localOrders.map((o, i) => (
+            <OrderLink key={o.url} order={o} index={i} />
           ))}
         </div>
       </section>
