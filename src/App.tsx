@@ -10,6 +10,7 @@ import ScrollManager from './lib/ScrollManager'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Article from './pages/Article'
+import Order from './pages/Order'
 
 function PanelDeepLink() {
   const [params, setParams] = useSearchParams()
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Article />} />
+            <Route path="/order" element={<Order />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
