@@ -38,6 +38,7 @@ export default function Header() {
   }
 
   return (
+    <>
     <header className={`site-header ${solid ? 'is-solid' : ''}`}>
       <div className="site-header__inner">
         <Link to="/" className="site-header__logo" onClick={() => setMenuOpen(false)} aria-label="JET CHEF ホーム">
@@ -66,8 +67,11 @@ export default function Header() {
           <span /><span /><span />
         </button>
       </div>
+    </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — kept as a sibling of <header> (not a descendant) so the
+          header's backdrop-filter doesn't become this fixed element's containing
+          block and collapse it into the header box. */}
       <nav id="mobile-menu" className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} aria-label="モバイルナビゲーション">
         {SECTIONS.map((s) => (
           <button key={s.id} className="mobile-menu__link" onClick={() => goSection(s.id)}>
@@ -84,6 +88,6 @@ export default function Header() {
           ご注文・ご予約
         </button>
       </nav>
-    </header>
+    </>
   )
 }
