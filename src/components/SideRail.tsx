@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useUI } from '../ui/ui'
 import './SideRail.css'
 
@@ -14,12 +15,13 @@ const ChatIcon = () => (
 
 export default function SideRail() {
   const { open } = useUI()
+  const navigate = useNavigate()
 
   return (
     <>
       {/* Desktop vertical rail */}
       <div className="side-rail" role="group" aria-label="クイックアクション">
-        <button className="side-rail__btn side-rail__btn--order" onClick={() => open('order')}>
+        <button className="side-rail__btn side-rail__btn--order" onClick={() => navigate('/order')}>
           <CartIcon />
           <span className="side-rail__text">今すぐ注文</span>
         </button>
@@ -31,7 +33,7 @@ export default function SideRail() {
 
       {/* Mobile bottom bar */}
       <div className="mobile-bar" role="group" aria-label="クイックアクション">
-        <button className="mobile-bar__btn mobile-bar__btn--order" onClick={() => open('order')}>
+        <button className="mobile-bar__btn mobile-bar__btn--order" onClick={() => navigate('/order')}>
           <CartIcon />
           <span>今すぐ注文</span>
         </button>

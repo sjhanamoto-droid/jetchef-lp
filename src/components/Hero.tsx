@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { useUI } from '../ui/ui'
 import { IMG } from '../data/images'
 import './Hero.css'
@@ -8,6 +9,7 @@ const BADGES = ['特許取得済', '法人対応', '累計100万個以上', 'Ube
 
 export default function Hero() {
   const { open } = useUI()
+  const navigate = useNavigate()
 
   return (
     <section id="hero" className="hero">
@@ -70,7 +72,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.34, ease }}
         >
-          <button className="btn btn--primary" onClick={() => open('order')}>
+          <button className="btn btn--primary" onClick={() => navigate('/order')}>
             法人向けJET CHEF弁当を注文する
           </button>
           <button className="hero__btn-outline" onClick={() => open('contact')}>

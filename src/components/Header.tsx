@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useUI } from '../ui/ui'
 import { IMG } from '../data/images'
 import './Header.css'
 
@@ -16,7 +15,6 @@ const SECTIONS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const { open } = useUI()
   const location = useLocation()
   const navigate = useNavigate()
   const solid = scrolled || location.pathname !== '/'
@@ -53,7 +51,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <button className="site-header__cta" onClick={() => open('order')}>
+        <button className="site-header__cta" onClick={() => navigate('/order')}>
           ご注文・ご予約
         </button>
 
@@ -82,7 +80,7 @@ export default function Header() {
           className="mobile-menu__cta"
           onClick={() => {
             setMenuOpen(false)
-            open('order')
+            navigate('/order')
           }}
         >
           ご注文・ご予約

@@ -36,7 +36,7 @@ export default function Footer() {
           <p className="footer__tagline">〜お弁当大革命！会議室がレストランに〜</p>
           <p className="footer__brandnote">ポータブルレストラン JET CHEF</p>
           <div className="footer__cta-row">
-            <button className="btn btn--primary" onClick={() => open('order')}>ご注文・ご予約</button>
+            <button className="btn btn--primary" onClick={() => navigate('/order')}>ご注文・ご予約</button>
             <button className="footer__ghost" onClick={() => open('contact')}>お問い合わせ</button>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import Reveal from '../lib/Reveal'
 import { useUI } from '../ui/ui'
 import { CONTACT } from '../data/contact'
@@ -5,6 +6,7 @@ import './ContactSection.css'
 
 export default function ContactSection() {
   const { open } = useUI()
+  const navigate = useNavigate()
 
   return (
     <section id="contact" className="contact">
@@ -21,7 +23,7 @@ export default function ContactSection() {
         </Reveal>
 
         <Reveal className="contact__actions" delay={0.1}>
-          <button className="btn btn--primary" onClick={() => open('order')}>
+          <button className="btn btn--primary" onClick={() => navigate('/order')}>
             会議弁当を注文・相談する
           </button>
           <button className="contact__btn" onClick={() => open('contact')}>

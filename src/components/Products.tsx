@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import Reveal from '../lib/Reveal'
 import { useUI } from '../ui/ui'
 import { IMG } from '../data/images'
@@ -32,6 +33,7 @@ function ProductCard({ p, i }: { p: Product; i: number }) {
 
 export default function Products() {
   const { open } = useUI()
+  const navigate = useNavigate()
 
   return (
     <section id="products" className="products section">
@@ -56,7 +58,7 @@ export default function Products() {
               <p className="restaurant__desc">
                 養殖期間1年未満の青手の新仔うなぎ（ニホンウナギ）のみを使用。蒸気調理で、ふっくら仕上がる本格うなぎ弁当。
               </p>
-              <button className="restaurant__btn" onClick={() => open('order')}>
+              <button className="restaurant__btn" onClick={() => navigate('/order')}>
                 法人向けに注文する<i>→</i>
               </button>
             </div>
@@ -78,7 +80,7 @@ export default function Products() {
               <p className="restaurant__desc">
                 冷めても美味しいから、いつでも熱々な焼肉弁当へ。最後の一口まで出来立てホヤホヤの和牛焼肉弁当をお届けします。
               </p>
-              <button className="restaurant__btn" onClick={() => open('order')}>
+              <button className="restaurant__btn" onClick={() => navigate('/order')}>
                 法人向けに注文する<i>→</i>
               </button>
             </div>

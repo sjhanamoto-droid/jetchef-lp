@@ -1,6 +1,5 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import { getArticle, ARTICLES, type Block } from '../data/articles'
-import { useUI } from '../ui/ui'
 import './Article.css'
 
 const fmt = (iso: string) => iso.replace(/-/g, '.')
@@ -31,7 +30,7 @@ function renderBlock(b: Block, i: number) {
 
 export default function Article() {
   const { slug } = useParams()
-  const { open } = useUI()
+  const navigate = useNavigate()
   const article = slug ? getArticle(slug) : undefined
 
   if (!article) return <Navigate to="/blog" replace />
@@ -62,7 +61,7 @@ export default function Article() {
           <div className="article__cta">
             <h3>JET CHEFを注文する</h3>
             <p>会議・セミナー・接待に。電子レンジ不要で、出来立ての美味しさをお届けします。</p>
-            <button className="btn btn--primary" onClick={() => open('order')}>
+            <button className="btn btn--primary" onClick={() => navigate('/order')}>
               ご注文・ご予約はこちら
             </button>
           </div>
