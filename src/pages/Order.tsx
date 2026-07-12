@@ -59,36 +59,15 @@ export default function Order() {
 
       <div className="order-page__body">
         <div className="order-page__inner">
-          {/* お電話からのご予約 */}
-          <motion.a className="order-phone" href={CONTACT.phoneHref} {...rowIn(0)}>
-            <span className="order-phone__icon" aria-hidden="true"><PhoneIcon /></span>
-            <span className="order-phone__body">
-              <span className="order-phone__label">お電話からのご予約はこちら</span>
-              <span className="order-phone__value">{CONTACT.phone}</span>
-              <span className="order-phone__meta">{CONTACT.phoneHours}</span>
-            </span>
-            <span className="order-phone__arrow" aria-hidden="true">→</span>
-          </motion.a>
-
-          {/* オンライン通販でお取り寄せ（3大カテゴリーの1つとして強調） */}
-          {onlineOrder && (
-            <section className="panel-section">
-              <motion.a
-                className="order-featured"
-                href={onlineOrder.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                {...rowIn(0)}
-              >
-                <span className="order-featured__text">
-                  <span className="order-featured__badge">全国配送</span>
-                  <span className="order-featured__label">{onlineOrder.label}</span>
-                  <span className="order-featured__sub">{onlineOrder.sub}</span>
-                </span>
-                <span className="order-featured__arrow" aria-hidden="true">→</span>
-              </motion.a>
-            </section>
-          )}
+          {/* 個人のお客様 */}
+          <section className="panel-section">
+            <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様予約はこちら" />
+            <div className="order-links">
+              {localOrders.map((o, i) => (
+                <OrderLink key={o.url} order={o} index={i} />
+              ))}
+            </div>
+          </section>
 
           {/* 法人のお客様 */}
           <section className="panel-section">
@@ -114,15 +93,36 @@ export default function Order() {
             <p className="panel-note">{CORPORATE_NOTE}</p>
           </section>
 
-          {/* 個人のお客様 */}
-          <section className="panel-section">
-            <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様予約はこちら" />
-            <div className="order-links">
-              {localOrders.map((o, i) => (
-                <OrderLink key={o.url} order={o} index={i} />
-              ))}
-            </div>
-          </section>
+          {/* オンライン通販でお取り寄せ（3大カテゴリーの1つとして強調） */}
+          {onlineOrder && (
+            <section className="panel-section">
+              <motion.a
+                className="order-featured"
+                href={onlineOrder.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...rowIn(0)}
+              >
+                <span className="order-featured__text">
+                  <span className="order-featured__badge">全国配送</span>
+                  <span className="order-featured__label">{onlineOrder.label}</span>
+                  <span className="order-featured__sub">{onlineOrder.sub}</span>
+                </span>
+                <span className="order-featured__arrow" aria-hidden="true">→</span>
+              </motion.a>
+            </section>
+          )}
+
+          {/* お電話からのご予約 */}
+          <motion.a className="order-phone" href={CONTACT.phoneHref} {...rowIn(0)}>
+            <span className="order-phone__icon" aria-hidden="true"><PhoneIcon /></span>
+            <span className="order-phone__body">
+              <span className="order-phone__label">お電話からのご予約はこちら</span>
+              <span className="order-phone__value">{CONTACT.phone}</span>
+              <span className="order-phone__meta">{CONTACT.phoneHours}</span>
+            </span>
+            <span className="order-phone__arrow" aria-hidden="true">→</span>
+          </motion.a>
         </div>
       </div>
     </div>
