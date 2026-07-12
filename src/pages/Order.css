@@ -43,3 +43,10 @@
 .order-page__body {
   padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2rem) clamp(4rem, 9vw, 6rem);
 }
+
+/* Phone block now sits below the online mail-order section — add a gap above it
+   to match the rhythm between the other blocks (.order-phone isn't a .panel-section,
+   so the .panel-section + .panel-section rule doesn't reach it). */
+.order-page .order-phone {
+  margin-top: var(--sp-7);
+}
