@@ -19,29 +19,8 @@
   margin: 0 auto;
 }
 
-.order-page__hero {
-  padding: clamp(2rem, 6vw, 3.75rem) clamp(1.25rem, 5vw, 2rem) clamp(1.5rem, 4vw, 2.25rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.order-page__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  margin-bottom: var(--sp-5);
-  font-family: var(--f-sans);
-  font-weight: 600;
-  font-size: var(--t-sm);
-  color: rgba(245, 237, 224, 0.72);
-  transition: color var(--dur-1), transform var(--dur-1);
-}
-.order-page__back:hover {
-  color: var(--c-gold-2);
-  transform: translateX(-3px);
-}
-
 .order-page__body {
-  padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2rem) clamp(4rem, 9vw, 6rem);
+  padding: clamp(2rem, 6vw, 3.25rem) clamp(1.25rem, 5vw, 2rem) clamp(4rem, 9vw, 6rem);
 }
 
 /* Phone block now sits below the online mail-order section — add a gap above it

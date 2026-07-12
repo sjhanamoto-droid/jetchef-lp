@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { IMG } from '../data/images'
 import { CONTACT } from '../data/contact'
 import { PERSONAL_ORDERS, CORPORATE_ORDERS, CORPORATE_NOTE } from '../data/orders'
@@ -44,19 +43,6 @@ export default function Order() {
 
   return (
     <div className="order-page">
-      <header className="order-page__hero">
-        <div className="order-page__inner">
-          <Link className="order-page__back" to="/">
-            <span aria-hidden="true">←</span> トップへ戻る
-          </Link>
-          <p className="panel__kicker">JET CHEF</p>
-          <h1 className="panel__title">ご注文・ご予約</h1>
-          <p className="panel__sub">
-            法人のお客様・個人のお客様、それぞれの専用予約ページへご案内します。
-          </p>
-        </div>
-      </header>
-
       <div className="order-page__body">
         <div className="order-page__inner">
           {/* 個人のお客様 */}
