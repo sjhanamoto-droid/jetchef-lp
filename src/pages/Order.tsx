@@ -45,26 +45,6 @@ export default function Order() {
     <div className="order-page">
       <div className="order-page__body">
         <div className="order-page__inner">
-          {/* オンライン通販でお取り寄せ（一番上・3大カテゴリーの1つとして強調） */}
-          {onlineOrder && (
-            <section className="panel-section">
-              <motion.a
-                className="order-featured"
-                href={onlineOrder.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                {...rowIn(0)}
-              >
-                <span className="order-featured__text">
-                  <span className="order-featured__badge">全国配送</span>
-                  <span className="order-featured__label">{onlineOrder.label}</span>
-                  <span className="order-featured__sub">{onlineOrder.sub}</span>
-                </span>
-                <span className="order-featured__arrow" aria-hidden="true">→</span>
-              </motion.a>
-            </section>
-          )}
-
           {/* 個人のお客様 */}
           <section className="panel-section">
             <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様注文はこちら" />
@@ -98,6 +78,26 @@ export default function Order() {
             </div>
             <p className="panel-note">{CORPORATE_NOTE}</p>
           </section>
+
+          {/* オンライン通販でお取り寄せ */}
+          {onlineOrder && (
+            <section className="panel-section">
+              <motion.a
+                className="order-featured"
+                href={onlineOrder.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...rowIn(0)}
+              >
+                <span className="order-featured__text">
+                  <span className="order-featured__badge">全国配送</span>
+                  <span className="order-featured__label">{onlineOrder.label}</span>
+                  <span className="order-featured__sub">{onlineOrder.sub}</span>
+                </span>
+                <span className="order-featured__arrow" aria-hidden="true">→</span>
+              </motion.a>
+            </section>
+          )}
 
           {/* お電話からのご予約 */}
           <motion.a className="order-phone" href={CONTACT.phoneHref} {...rowIn(0)}>
