@@ -2,6 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
   "rewrites": [
+    { "source": "/senior", "destination": "/senior.html" },
+    { "source": "/senior/", "destination": "/senior.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
