@@ -147,10 +147,11 @@
   .hero__badge { font-family: var(--f-sans); font-weight: 600; font-size: 0.8rem; color: var(--text); letter-spacing: 0.02em; }
   .hero__badge b { color: var(--gold-deep); font-weight: 700; }
   .hero__media { position: relative; }
-  .hero__video-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3.4; overflow: hidden; background: var(--ink); }
+  .hero__video-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
   .hero__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .hero__video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 152%; height: 100%; border: 0; z-index: 1; pointer-events: none; }
+  .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 1; pointer-events: none; }
   .hero__stamp { position: absolute; left: 0; bottom: 0; z-index: 2; background: var(--ink); color: #fff; font-family: var(--f-serif); font-size: 0.9rem; letter-spacing: 0.06em; padding: 0.85em 1.25em; }
+  .hero__disclaimer { margin: 0.7rem 0 0; font-family: var(--f-sans); font-size: 0.76rem; line-height: 1.6; color: var(--text-soft); }
   .hero__stamp b { color: var(--gold-soft); font-weight: 600; }
   @media (max-width: 860px) { .hero__in { grid-template-columns: 1fr; } .hero__media { order: -1; } }
 
@@ -388,8 +389,9 @@
           src="https://www.youtube.com/embed/RjoqAP17gYQ?autoplay=1&mute=1&loop=1&playlist=RjoqAP17gYQ&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&iv_load_policy=3&fs=0"
           title="JET CHEF 背景動画" allow="autoplay; encrypted-media" frameborder="0"
           referrerpolicy="strict-origin-when-cross-origin" aria-hidden="true" tabindex="-1"></iframe>
+        <div class="hero__stamp">紐を引くだけで、<b>できたての温かさ</b></div>
       </div>
-      <div class="hero__stamp">紐を引くだけで、<b>できたての温かさ</b></div>
+      <p class="hero__disclaimer">※ 動画の容器は旧型です。現在は最新のJET CHEF容器のため、仕様が一部異なります。</p>
     </div>
   </div>
 </section>
