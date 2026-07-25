@@ -46,7 +46,7 @@ export default function OrderPanel() {
       open={panel === 'order'}
       onClose={close}
       title="ご注文・ご予約"
-      subtitle="法人のお客様・個人のお客様、それぞれの専用予約ページへご案内します。"
+      subtitle="個人のお客様・法人のお客様、それぞれの専用予約ページへご案内します。"
     >
       {/* オンライン通販でお取り寄せ（一番上・3大カテゴリーの1つとして強調） */}
       {onlineOrder && (
@@ -67,6 +67,16 @@ export default function OrderPanel() {
           </motion.a>
         </section>
       )}
+
+      {/* 個人のお客様 */}
+      <section className="panel-section">
+        <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様注文はこちら" />
+        <div className="order-links">
+          {localOrders.map((o, i) => (
+            <OrderLink key={o.url} order={o} index={i} />
+          ))}
+        </div>
+      </section>
 
       {/* 法人のお客様 */}
       <section className="panel-section">
@@ -90,16 +100,6 @@ export default function OrderPanel() {
           ))}
         </div>
         <p className="panel-note">{CORPORATE_NOTE}</p>
-      </section>
-
-      {/* 個人のお客様 */}
-      <section className="panel-section">
-        <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様注文はこちら" />
-        <div className="order-links">
-          {localOrders.map((o, i) => (
-            <OrderLink key={o.url} order={o} index={i} />
-          ))}
-        </div>
       </section>
 
       {/* お電話からのご予約 */}

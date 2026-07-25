@@ -65,6 +65,16 @@ export default function Order() {
             </section>
           )}
 
+          {/* 個人のお客様 */}
+          <section className="panel-section">
+            <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様注文はこちら" />
+            <div className="order-links">
+              {localOrders.map((o, i) => (
+                <OrderLink key={o.url} order={o} index={i} />
+              ))}
+            </div>
+          </section>
+
           {/* 法人のお客様 */}
           <section className="panel-section">
             <img className="panel-banner" src={IMG.bannerCorporate} alt="法人様予約はこちら" />
@@ -87,16 +97,6 @@ export default function Order() {
               ))}
             </div>
             <p className="panel-note">{CORPORATE_NOTE}</p>
-          </section>
-
-          {/* 個人のお客様 */}
-          <section className="panel-section">
-            <img className="panel-banner" src={IMG.bannerPersonal} alt="個人様注文はこちら" />
-            <div className="order-links">
-              {localOrders.map((o, i) => (
-                <OrderLink key={o.url} order={o} index={i} />
-              ))}
-            </div>
           </section>
 
           {/* お電話からのご予約 */}
