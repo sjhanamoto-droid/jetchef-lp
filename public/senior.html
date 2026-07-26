@@ -201,6 +201,17 @@
   .ig-foot .lede { margin-inline: auto; }
   .ig-foot .btn { margin-top: 1.5rem; }
   @media (max-width: 620px) { .ig-grid { grid-template-columns: 1fr; max-width: 380px; } }
+
+  /* ---------- shop (築地うなぎ食堂 brand block) ---------- */
+  .shop { display: flex; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); margin-bottom: clamp(2rem, 4.5vw, 3rem); }
+  .shop__logo { flex-shrink: 0; width: clamp(110px, 15vw, 160px); height: clamp(110px, 15vw, 160px); border-radius: 50%; background: #fffdf9; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(120,84,30,0.12); }
+  .shop__logo img { width: 76%; height: auto; }
+  .shop__intro { flex: 1; }
+  .shop__tag { display: inline-block; background: var(--gold-deep); color: #fff; font-family: var(--f-sans); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; padding: 0.4em 0.95em; margin-bottom: 0.85rem; }
+  .shop__name { font-family: var(--f-serif); font-weight: 700; font-size: clamp(1.7rem, 3.6vw, 2.4rem); color: var(--ink); line-height: 1.2; margin: 0 0 0.7rem; letter-spacing: 0.03em; }
+  .shop__desc { font-family: var(--f-serif); font-size: 1rem; line-height: 1.9; color: var(--text); max-width: 52ch; margin: 0; }
+  .shop .btn { margin-top: 1.3rem; }
+  @media (max-width: 700px) { .shop { flex-direction: column; text-align: center; } .shop__desc { margin-inline: auto; } }
   @media (max-width: 820px) { .split { grid-template-columns: 1fr; } .split__media { order: -1; } }
 
   /* ---------- products (editorial grid, minimal) ---------- */
@@ -511,9 +522,17 @@
 <section class="sec sec--paper" id="products">
   <div class="container">
     <div class="sec__head">
-      <p class="eyebrow">商品ラインナップ ｜ 熱々！チルドうな重</p>
       <h2 class="heading">築地の本格うなぎを、ご家庭にも、施設にも。</h2>
       <p class="lede">築地うなぎ食堂が、仕入れ・焼き・たれの技術で仕上げたうな重。届いてすぐ、そのままお召し上がりいただけます。うなぎの量に応じて、松・竹・梅の三折からお選びください。</p>
+    </div>
+    <div class="shop">
+      <div class="shop__logo"><img src="/assets/jetchef_images/full-resolution/s-286x286_webp_0358d007-bba2-4cc9-8356-d793c0ec41f6.webp" alt="築地うなぎ食堂" loading="lazy" /></div>
+      <div class="shop__intro">
+        <span class="shop__tag">築地場外市場のうなぎ専門店</span>
+        <h3 class="shop__name">築地うなぎ食堂</h3>
+        <p class="shop__desc">養殖期間1年未満の青手の新仔うなぎ（ニホンウナギ）のみを使用。蒸気調理で、ふっくら仕上がる本格うなぎ弁当。</p>
+        <a class="btn btn--fill" href="https://line.me/R/ti/p/@953mjiaf" target="_blank" rel="noopener">ご注文はこちら</a>
+      </div>
     </div>
     <div class="prods">
       <article class="prod">
