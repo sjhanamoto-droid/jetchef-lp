@@ -136,7 +136,9 @@
 
   /* ---------- hero ---------- */
   .hero { background: var(--white); border-bottom: 1px solid var(--line-2); }
-  .hero__in { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 4.5vw, 4.5rem); align-items: center; padding-block: clamp(3.25rem, 7vw, 6rem); }
+  .hero__in { padding-block: clamp(3.25rem, 7vw, 6rem); }
+  .hero__header { margin-bottom: clamp(1.6rem, 4vw, 2.8rem); }
+  .hero__cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
   .hero__eyebrow { font-family: var(--f-sans); font-weight: 700; letter-spacing: 0.3em; font-size: 0.8rem; color: var(--gold-deep); margin: 0 0 1.35rem; }
   .hero__title { font-family: var(--f-serif); font-weight: 600; color: var(--ink); font-size: clamp(1.6rem, 5vw, 3.1rem); line-height: 1.4; letter-spacing: 0.03em; margin: 0; text-wrap: balance; }
   .hero__title em { font-style: normal; color: var(--gold-deep); border-bottom: 2px solid var(--gold-soft); padding-bottom: 0.05em; }
@@ -153,7 +155,7 @@
   .hero__stamp { position: absolute; left: 0; bottom: 0; z-index: 2; background: var(--ink); color: #fff; font-family: var(--f-serif); font-size: 0.9rem; letter-spacing: 0.06em; padding: 0.85em 1.25em; }
   .hero__disclaimer { margin: 0.7rem 0 0; font-family: var(--f-sans); font-size: 0.76rem; line-height: 1.6; color: var(--text-soft); }
   .hero__stamp b { color: var(--gold-soft); font-weight: 600; }
-  @media (max-width: 860px) { .hero__in { grid-template-columns: 1fr; } .hero__media { order: -1; } }
+  @media (max-width: 860px) { .hero__cols { grid-template-columns: 1fr; } }
 
   /* ---------- persona (image-led, editorial) ---------- */
   .persona { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.6rem, 3vw, 2.8rem); margin-top: 2.8rem; }
@@ -395,9 +397,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero__in container">
-    <div class="reveal">
+    <div class="hero__header reveal">
       <p class="hero__eyebrow">食べることは、生きること。</p>
       <h1 class="hero__title">お店に行けなくても、“できたて”の、<em>しあわせ</em>を。</h1>
+    </div>
+    <div class="hero__cols">
+      <div class="hero__text reveal">
       <p class="hero__lead">築地うなぎ食堂が、仕入れ・焼き・たれの技術で仕上げたうな重を、そのままチルドでお届け。紐を引くだけで、目の前で温かく香りが立ちのぼる——ただ食べるだけでなく、“できたて”の食体験を、ご自宅でも、施設でも。</p>
       <p class="hero__note">電子レンジも火も不要！紐を引くだけで、出来立てほかほかのうな重を全国に！</p>
       <div class="hero__actions">
@@ -421,6 +426,7 @@
         <li class="hero__badge"><b>やわらか</b>新仔うなぎ</li>
         <li class="hero__badge">累計<b>100万個</b>以上</li>
       </ul>
+    </div>
     </div>
   </div>
 </section>
